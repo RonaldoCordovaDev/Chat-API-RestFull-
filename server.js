@@ -11,19 +11,13 @@ const io = socketIO(server); // Inicializa el socket en el servidor
 
 // Middleware para servir la carpeta 'public' donde estará el frontend
 app.use(express.static(path.join(__dirname, 'public')));
-
-// Rutas de la API REST (puedes agregar más rutas según sea necesario)
-app.get('/api', (req, res) => {
-  res.send({ message: 'API RESTful funcionando correctamente' });
-});
-
 // Socket.io para gestionar la comunicación en tiempo real
 io.on('connection', (socket) => {
   console.log('Nuevo usuario conectado');
 
   // Escuchar mensajes desde el cliente
   socket.on('chat message', (msg) => {
-    console.log(`Mensaje recibido: ${msg}`);
+   // console.log(`Mensaje recibido: ${msg}`);
     io.emit('chat message', msg); // Emitir el mensaje a todos los usuarios conectados
   });
 

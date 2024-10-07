@@ -1,4 +1,6 @@
 /* public/styles.css */
+
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -25,14 +27,34 @@ body {
     margin-bottom: 20px;
     border: 1px solid #ddd;
     padding: 10px;
+    display: flex;
+    flex-direction: column; /* Alinea los mensajes verticalmente */
 }
 
-#messages div {
-    margin-bottom: 10px;
-    padding: 5px;
-    border-bottom: 1px solid #f1f1f1;
+/* Estilos para los mensajes individuales */
+.message {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 70%; /* Ancho máximo del mensaje */
+    word-wrap: break-word;
 }
 
+/* Mensajes enviados (alineados a la derecha y con fondo verde) */
+.message.sent {
+    align-self: flex-end; /* Alinea a la derecha */
+    background-color: #dcf8c6; /* Color de fondo similar al de WhatsApp */
+    text-align: right;
+}
+
+/* Mensajes recibidos (alineados a la izquierda y con fondo gris) */
+.message.received {
+    align-self: flex-start; /* Alinea a la izquierda */
+    background-color: #ececec; /* Fondo claro para mensajes recibidos */
+    text-align: left;
+}
+
+/* Estilos del formulario */
 #chat-form {
     display: flex;
 }
@@ -52,3 +74,4 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
+
