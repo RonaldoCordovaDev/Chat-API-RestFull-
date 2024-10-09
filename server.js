@@ -13,7 +13,7 @@ const io = socketIO(server); // Inicializa el socket en el servidor
 app.use(express.static(path.join(__dirname, 'public')));
 // Socket.io para gestionar la comunicación en tiempo real
 io.on('connection', (socket) => {
-  console.log('Nuevo usuario conectado');
+  console.log('Nuevo usuarioo conectado');
 
   // Escuchar mensajes desde el cliente
   socket.on('chat message', (msg) => {
